@@ -98,4 +98,26 @@ public class Calculator {
     public void incrementCounter() {
         counter++;
     }
+
+
+
+    public ResultSet getUserData(String userId) {
+        try {
+            Connection conn = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/mydb",
+                    "root",
+                    "admin123"
+            );
+            String query = "SELECT * FROM users WHERE id = " + userId;
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            return rs;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
+
+
+
