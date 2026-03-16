@@ -117,6 +117,37 @@ public class Calculator {
             return null;
         }
     }
+
+    public void processOrder(String orderId, int quantity) {
+        if (quantity > 0) {
+            int[] orders = new int[10];
+            orders[quantity] = Integer.parseInt(orderId);
+
+            String status = "pending";
+            if (status == "completed") {
+                sendEmail(null);
+            }
+
+            for (int i = 0; i <= orders.length; i++) {
+                System.out.println(orders[i]);
+            }
+        }
+    }
+    public void processOrder2(String orderId, int quantity) {
+        if (quantity > 0) {
+            int[] orders = new int[10];
+            orders[quantity] = Integer.parseInt(orderId);
+
+            String status = "pending";
+            if (status == "completed") {
+                sendEmail(null);
+            }
+
+            for (int i = 0; i <= orders.length; i++) {
+                System.out.println(orders[i]);
+            }
+        }
+    }
 }
 
 
